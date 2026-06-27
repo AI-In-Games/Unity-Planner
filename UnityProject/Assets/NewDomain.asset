@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 353eaf0ec1efc194d9d8527453a1c833, type: 3}
+  m_Name: NewDomain
+  m_EditorClassIdentifier: 
+  m_Json: "{\n    \"name\": \"new-domain\",\n    \"requirements\": [\n        \":strips\",\n       
+    \":typing\"\n    ],\n    \"types\": [\n        {\n            \"name\": \"new-type\",\n           
+    \"parent\": \"object\"\n        }\n    ],\n    \"predicates\": [\n        {\n           
+    \"name\": \"test-predicate\",\n            \"parameters\": []\n        },\n       
+    {\n            \"name\": \"newPredicate1\",\n            \"parameters\": []\n       
+    }\n    ],\n    \"actions\": [\n        {\n            \"name\": \"Test Action\",\n           
+    \"parameters\": [\n                {\n                    \"name\": \"?param\",\n                   
+    \"type\": \"object\"\n                }\n            ],\n            \"precondition\":
+    {\n                \"op\": \"and\",\n                \"conditions\": []\n           
+    },\n            \"effects\": [\n                {\n                    \"negative\":
+    false,\n                    \"predicate\": \"test-predicate\",\n                   
+    \"args\": []\n                }\n            ]\n        }\n    ]\n}"

@@ -1,0 +1,165 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 353eaf0ec1efc194d9d8527453a1c833, type: 3}
+  m_Name: Soldier
+  m_EditorClassIdentifier: 
+  m_Json: "{\n    \"name\": \"soldier\",\n    \"requirements\": [\n        \":strips\",\n       
+    \":typing\",\n        \":negative-preconditions\"\n    ],\n    \"types\": [\n       
+    {\n            \"name\": \"agent\",\n            \"parent\": \"object\"\n       
+    },\n        {\n            \"name\": \"enemy\",\n            \"parent\": \"object\"\n       
+    },\n        {\n            \"name\": \"weapon\",\n            \"parent\": \"object\"\n       
+    },\n        {\n            \"name\": \"location\",\n            \"parent\": \"object\"\n       
+    }\n    ],\n    \"predicates\": [\n        {\n            \"name\": \"at\",\n           
+    \"parameters\": [\n                {\n                    \"name\": \"?a\",\n                   
+    \"type\": \"agent\"\n                },\n                {\n                   
+    \"name\": \"?l\",\n                    \"type\": \"location\"\n               
+    }\n            ]\n        },\n        {\n            \"name\": \"connected\",\n           
+    \"parameters\": [\n                {\n                    \"name\": \"?from\",\n                   
+    \"type\": \"location\"\n                },\n                {\n                   
+    \"name\": \"?to\",\n                    \"type\": \"location\"\n               
+    }\n            ]\n        },\n        {\n            \"name\": \"in-cover\",\n           
+    \"parameters\": [\n                {\n                    \"name\": \"?a\",\n                   
+    \"type\": \"agent\"\n                }\n            ]\n        },\n        {\n           
+    \"name\": \"cover-at\",\n            \"parameters\": [\n                {\n                   
+    \"name\": \"?l\",\n                    \"type\": \"location\"\n               
+    }\n            ]\n        },\n        {\n            \"name\": \"enemy-at\",\n           
+    \"parameters\": [\n                {\n                    \"name\": \"?e\",\n                   
+    \"type\": \"enemy\"\n                },\n                {\n                   
+    \"name\": \"?l\",\n                    \"type\": \"location\"\n               
+    }\n            ]\n        },\n        {\n            \"name\": \"enemy-alive\",\n           
+    \"parameters\": [\n                {\n                    \"name\": \"?e\",\n                   
+    \"type\": \"enemy\"\n                }\n            ]\n        },\n        {\n           
+    \"name\": \"has-weapon\",\n            \"parameters\": [\n                {\n                   
+    \"name\": \"?a\",\n                    \"type\": \"agent\"\n                },\n               
+    {\n                    \"name\": \"?w\",\n                    \"type\": \"weapon\"\n               
+    }\n            ]\n        },\n        {\n            \"name\": \"weapon-loaded\",\n           
+    \"parameters\": [\n                {\n                    \"name\": \"?w\",\n                   
+    \"type\": \"weapon\"\n                }\n            ]\n        },\n        {\n           
+    \"name\": \"has-grenade\",\n            \"parameters\": [\n                {\n                   
+    \"name\": \"?a\",\n                    \"type\": \"agent\"\n                }\n           
+    ]\n        }\n    ],\n    \"actions\": [\n        {\n            \"name\": \"move\",\n           
+    \"parameters\": [\n                {\n                    \"name\": \"?a\",\n                   
+    \"type\": \"agent\"\n                },\n                {\n                   
+    \"name\": \"?from\",\n                    \"type\": \"location\"\n               
+    },\n                {\n                    \"name\": \"?to\",\n                   
+    \"type\": \"location\"\n                }\n            ],\n            \"precondition\":
+    {\n                \"op\": \"and\",\n                \"conditions\": [\n                   
+    {\n                        \"negated\": false,\n                        \"predicate\":
+    \"at\",\n                        \"args\": [\n                            \"?a\",\n                           
+    \"?from\"\n                        ]\n                    },\n                   
+    {\n                        \"negated\": false,\n                        \"predicate\":
+    \"connected\",\n                        \"args\": [\n                           
+    \"?from\",\n                            \"?to\"\n                        ]\n                   
+    }\n                ]\n            },\n            \"effects\": [\n               
+    {\n                    \"negative\": true,\n                    \"predicate\":
+    \"at\",\n                    \"args\": [\n                        \"?a\",\n                       
+    \"?from\"\n                    ]\n                },\n                {\n                   
+    \"negative\": false,\n                    \"predicate\": \"at\",\n                   
+    \"args\": [\n                        \"?a\",\n                        \"?to\"\n                   
+    ]\n                },\n                {\n                    \"negative\": true,\n                   
+    \"predicate\": \"in-cover\",\n                    \"args\": [\n                       
+    \"?a\"\n                    ]\n                }\n            ]\n        },\n       
+    {\n            \"name\": \"take-cover\",\n            \"parameters\": [\n               
+    {\n                    \"name\": \"?a\",\n                    \"type\": \"agent\"\n               
+    },\n                {\n                    \"name\": \"?l\",\n                   
+    \"type\": \"location\"\n                }\n            ],\n            \"precondition\":
+    {\n                \"op\": \"and\",\n                \"conditions\": [\n                   
+    {\n                        \"negated\": false,\n                        \"predicate\":
+    \"at\",\n                        \"args\": [\n                            \"?a\",\n                           
+    \"?l\"\n                        ]\n                    },\n                   
+    {\n                        \"negated\": false,\n                        \"predicate\":
+    \"cover-at\",\n                        \"args\": [\n                           
+    \"?l\"\n                        ]\n                    },\n                   
+    {\n                        \"negated\": true,\n                        \"predicate\":
+    \"in-cover\",\n                        \"args\": [\n                           
+    \"?a\"\n                        ]\n                    }\n                ]\n           
+    },\n            \"effects\": [\n                {\n                    \"negative\":
+    false,\n                    \"predicate\": \"in-cover\",\n                   
+    \"args\": [\n                        \"?a\"\n                    ]\n               
+    }\n            ]\n        },\n        {\n            \"name\": \"reload\",\n           
+    \"parameters\": [\n                {\n                    \"name\": \"?a\",\n                   
+    \"type\": \"agent\"\n                },\n                {\n                   
+    \"name\": \"?w\",\n                    \"type\": \"weapon\"\n               
+    }\n            ],\n            \"precondition\": {\n                \"op\": \"and\",\n               
+    \"conditions\": [\n                    {\n                        \"negated\":
+    false,\n                        \"predicate\": \"has-weapon\",\n                       
+    \"args\": [\n                            \"?a\",\n                           
+    \"?w\"\n                        ]\n                    },\n                   
+    {\n                        \"negated\": false,\n                        \"predicate\":
+    \"in-cover\",\n                        \"args\": [\n                           
+    \"?a\"\n                        ]\n                    },\n                   
+    {\n                        \"negated\": true,\n                        \"predicate\":
+    \"weapon-loaded\",\n                        \"args\": [\n                           
+    \"?w\"\n                        ]\n                    }\n                ]\n           
+    },\n            \"effects\": [\n                {\n                    \"negative\":
+    false,\n                    \"predicate\": \"weapon-loaded\",\n                   
+    \"args\": [\n                        \"?w\"\n                    ]\n               
+    }\n            ]\n        },\n        {\n            \"name\": \"shoot\",\n           
+    \"parameters\": [\n                {\n                    \"name\": \"?a\",\n                   
+    \"type\": \"agent\"\n                },\n                {\n                   
+    \"name\": \"?w\",\n                    \"type\": \"weapon\"\n               
+    },\n                {\n                    \"name\": \"?e\",\n                   
+    \"type\": \"enemy\"\n                },\n                {\n                   
+    \"name\": \"?l\",\n                    \"type\": \"location\"\n               
+    }\n            ],\n            \"precondition\": {\n                \"op\": \"and\",\n               
+    \"conditions\": [\n                    {\n                        \"negated\":
+    false,\n                        \"predicate\": \"at\",\n                       
+    \"args\": [\n                            \"?a\",\n                           
+    \"?l\"\n                        ]\n                    },\n                   
+    {\n                        \"negated\": false,\n                        \"predicate\":
+    \"has-weapon\",\n                        \"args\": [\n                           
+    \"?a\",\n                            \"?w\"\n                        ]\n                   
+    },\n                    {\n                        \"negated\": false,\n                       
+    \"predicate\": \"weapon-loaded\",\n                        \"args\": [\n                           
+    \"?w\"\n                        ]\n                    },\n                   
+    {\n                        \"negated\": false,\n                        \"predicate\":
+    \"enemy-at\",\n                        \"args\": [\n                           
+    \"?e\",\n                            \"?l\"\n                        ]\n                   
+    },\n                    {\n                        \"negated\": false,\n                       
+    \"predicate\": \"enemy-alive\",\n                        \"args\": [\n                           
+    \"?e\"\n                        ]\n                    }\n                ]\n           
+    },\n            \"effects\": [\n                {\n                    \"negative\":
+    true,\n                    \"predicate\": \"enemy-alive\",\n                   
+    \"args\": [\n                        \"?e\"\n                    ]\n               
+    },\n                {\n                    \"negative\": true,\n                   
+    \"predicate\": \"weapon-loaded\",\n                    \"args\": [\n                       
+    \"?w\"\n                    ]\n                }\n            ]\n        },\n       
+    {\n            \"name\": \"throw-grenade\",\n            \"parameters\": [\n               
+    {\n                    \"name\": \"?a\",\n                    \"type\": \"agent\"\n               
+    },\n                {\n                    \"name\": \"?from\",\n                   
+    \"type\": \"location\"\n                },\n                {\n                   
+    \"name\": \"?to\",\n                    \"type\": \"location\"\n               
+    },\n                {\n                    \"name\": \"?e\",\n                   
+    \"type\": \"enemy\"\n                }\n            ],\n            \"precondition\":
+    {\n                \"op\": \"and\",\n                \"conditions\": [\n                   
+    {\n                        \"negated\": false,\n                        \"predicate\":
+    \"at\",\n                        \"args\": [\n                            \"?a\",\n                           
+    \"?from\"\n                        ]\n                    },\n                   
+    {\n                        \"negated\": false,\n                        \"predicate\":
+    \"has-grenade\",\n                        \"args\": [\n                           
+    \"?a\"\n                        ]\n                    },\n                   
+    {\n                        \"negated\": false,\n                        \"predicate\":
+    \"connected\",\n                        \"args\": [\n                           
+    \"?from\",\n                            \"?to\"\n                        ]\n                   
+    },\n                    {\n                        \"negated\": false,\n                       
+    \"predicate\": \"enemy-at\",\n                        \"args\": [\n                           
+    \"?e\",\n                            \"?to\"\n                        ]\n                   
+    },\n                    {\n                        \"negated\": false,\n                       
+    \"predicate\": \"enemy-alive\",\n                        \"args\": [\n                           
+    \"?e\"\n                        ]\n                    }\n                ]\n           
+    },\n            \"effects\": [\n                {\n                    \"negative\":
+    true,\n                    \"predicate\": \"enemy-alive\",\n                   
+    \"args\": [\n                        \"?e\"\n                    ]\n               
+    },\n                {\n                    \"negative\": true,\n                   
+    \"predicate\": \"has-grenade\",\n                    \"args\": [\n                       
+    \"?a\"\n                    ]\n                }\n            ]\n        }\n   
+    ]\n}"

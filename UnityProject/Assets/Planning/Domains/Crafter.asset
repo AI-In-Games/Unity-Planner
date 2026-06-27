@@ -1,0 +1,200 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 353eaf0ec1efc194d9d8527453a1c833, type: 3}
+  m_Name: Crafter
+  m_EditorClassIdentifier: 
+  m_Json: "{\n    \"name\": \"crafter\",\n    \"requirements\": [\n        \":strips\",\n       
+    \":typing\",\n        \":negative-preconditions\"\n    ],\n    \"types\": [\n       
+    {\n            \"name\": \"agent\",\n            \"parent\": \"object\"\n       
+    },\n        {\n            \"name\": \"location\",\n            \"parent\": \"object\"\n       
+    }\n    ],\n    \"predicates\": [\n        {\n            \"name\": \"at\",\n           
+    \"parameters\": [\n                {\n                    \"name\": \"?a\",\n                   
+    \"type\": \"agent\"\n                },\n                {\n                   
+    \"name\": \"?l\",\n                    \"type\": \"location\"\n               
+    }\n            ]\n        },\n        {\n            \"name\": \"connected\",\n           
+    \"parameters\": [\n                {\n                    \"name\": \"?from\",\n                   
+    \"type\": \"location\"\n                },\n                {\n                   
+    \"name\": \"?to\",\n                    \"type\": \"location\"\n               
+    }\n            ]\n        },\n        {\n            \"name\": \"has-wood\",\n           
+    \"parameters\": [\n                {\n                    \"name\": \"?a\",\n                   
+    \"type\": \"agent\"\n                }\n            ]\n        },\n        {\n           
+    \"name\": \"has-planks\",\n            \"parameters\": [\n                {\n                   
+    \"name\": \"?a\",\n                    \"type\": \"agent\"\n                }\n           
+    ]\n        },\n        {\n            \"name\": \"has-iron-ore\",\n           
+    \"parameters\": [\n                {\n                    \"name\": \"?a\",\n                   
+    \"type\": \"agent\"\n                }\n            ]\n        },\n        {\n           
+    \"name\": \"has-iron-ingot\",\n            \"parameters\": [\n               
+    {\n                    \"name\": \"?a\",\n                    \"type\": \"agent\"\n               
+    }\n            ]\n        },\n        {\n            \"name\": \"has-iron-sword\",\n           
+    \"parameters\": [\n                {\n                    \"name\": \"?a\",\n                   
+    \"type\": \"agent\"\n                }\n            ]\n        },\n        {\n           
+    \"name\": \"has-pickaxe\",\n            \"parameters\": [\n                {\n                   
+    \"name\": \"?a\",\n                    \"type\": \"agent\"\n                }\n           
+    ]\n        },\n        {\n            \"name\": \"workbench-at\",\n           
+    \"parameters\": [\n                {\n                    \"name\": \"?l\",\n                   
+    \"type\": \"location\"\n                }\n            ]\n        },\n       
+    {\n            \"name\": \"furnace-at\",\n            \"parameters\": [\n               
+    {\n                    \"name\": \"?l\",\n                    \"type\": \"location\"\n               
+    }\n            ]\n        },\n        {\n            \"name\": \"wood-available\",\n           
+    \"parameters\": [\n                {\n                    \"name\": \"?l\",\n                   
+    \"type\": \"location\"\n                }\n            ]\n        },\n       
+    {\n            \"name\": \"ore-available\",\n            \"parameters\": [\n               
+    {\n                    \"name\": \"?l\",\n                    \"type\": \"location\"\n               
+    }\n            ]\n        }\n    ],\n    \"actions\": [\n        {\n           
+    \"name\": \"travel\",\n            \"parameters\": [\n                {\n                   
+    \"name\": \"?a\",\n                    \"type\": \"agent\"\n                },\n               
+    {\n                    \"name\": \"?from\",\n                    \"type\": \"location\"\n               
+    },\n                {\n                    \"name\": \"?to\",\n                   
+    \"type\": \"location\"\n                },\n                {\n                   
+    \"name\": \"?param\",\n                    \"type\": \"object\"\n               
+    }\n            ],\n            \"precondition\": {\n                \"op\": \"and\",\n               
+    \"conditions\": [\n                    {\n                        \"negated\":
+    false,\n                        \"predicate\": \"at\",\n                       
+    \"args\": [\n                            \"?a\",\n                           
+    \"?from\"\n                        ]\n                    },\n                   
+    {\n                        \"negated\": false,\n                        \"predicate\":
+    \"connected\",\n                        \"args\": [\n                           
+    \"?from\",\n                            \"?to\"\n                        ]\n                   
+    }\n                ]\n            },\n            \"effects\": [\n               
+    {\n                    \"negative\": true,\n                    \"predicate\":
+    \"at\",\n                    \"args\": [\n                        \"?a\",\n                       
+    \"?from\"\n                    ]\n                },\n                {\n                   
+    \"negative\": false,\n                    \"predicate\": \"at\",\n                   
+    \"args\": [\n                        \"?a\",\n                        \"?to\"\n                   
+    ]\n                }\n            ]\n        },\n        {\n            \"name\":
+    \"gather-wood\",\n            \"parameters\": [\n                {\n                   
+    \"name\": \"?a\",\n                    \"type\": \"agent\"\n                },\n               
+    {\n                    \"name\": \"?l\",\n                    \"type\": \"location\"\n               
+    }\n            ],\n            \"precondition\": {\n                \"op\": \"and\",\n               
+    \"conditions\": [\n                    {\n                        \"negated\":
+    false,\n                        \"predicate\": \"at\",\n                       
+    \"args\": [\n                            \"?a\",\n                           
+    \"?l\"\n                        ]\n                    },\n                   
+    {\n                        \"negated\": false,\n                        \"predicate\":
+    \"wood-available\",\n                        \"args\": [\n                           
+    \"?l\"\n                        ]\n                    },\n                   
+    {\n                        \"negated\": true,\n                        \"predicate\":
+    \"has-wood\",\n                        \"args\": [\n                           
+    \"?a\"\n                        ]\n                    }\n                ]\n           
+    },\n            \"effects\": [\n                {\n                    \"negative\":
+    false,\n                    \"predicate\": \"has-wood\",\n                   
+    \"args\": [\n                        \"?a\"\n                    ]\n               
+    },\n                {\n                    \"negative\": true,\n                   
+    \"predicate\": \"wood-available\",\n                    \"args\": [\n                       
+    \"?l\"\n                    ]\n                }\n            ]\n        },\n       
+    {\n            \"name\": \"mine-ore\",\n            \"parameters\": [\n               
+    {\n                    \"name\": \"?a\",\n                    \"type\": \"agent\"\n               
+    },\n                {\n                    \"name\": \"?l\",\n                   
+    \"type\": \"location\"\n                }\n            ],\n            \"precondition\":
+    {\n                \"op\": \"and\",\n                \"conditions\": [\n                   
+    {\n                        \"negated\": false,\n                        \"predicate\":
+    \"at\",\n                        \"args\": [\n                            \"?a\",\n                           
+    \"?l\"\n                        ]\n                    },\n                   
+    {\n                        \"negated\": false,\n                        \"predicate\":
+    \"ore-available\",\n                        \"args\": [\n                           
+    \"?l\"\n                        ]\n                    },\n                   
+    {\n                        \"negated\": false,\n                        \"predicate\":
+    \"has-pickaxe\",\n                        \"args\": [\n                           
+    \"?a\"\n                        ]\n                    },\n                   
+    {\n                        \"negated\": true,\n                        \"predicate\":
+    \"has-iron-ore\",\n                        \"args\": [\n                           
+    \"?a\"\n                        ]\n                    }\n                ]\n           
+    },\n            \"effects\": [\n                {\n                    \"negative\":
+    false,\n                    \"predicate\": \"has-iron-ore\",\n                   
+    \"args\": [\n                        \"?a\"\n                    ]\n               
+    },\n                {\n                    \"negative\": true,\n                   
+    \"predicate\": \"ore-available\",\n                    \"args\": [\n                       
+    \"?l\"\n                    ]\n                }\n            ]\n        },\n       
+    {\n            \"name\": \"craft-planks\",\n            \"parameters\": [\n               
+    {\n                    \"name\": \"?a\",\n                    \"type\": \"agent\"\n               
+    },\n                {\n                    \"name\": \"?l\",\n                   
+    \"type\": \"location\"\n                }\n            ],\n            \"precondition\":
+    {\n                \"op\": \"and\",\n                \"conditions\": [\n                   
+    {\n                        \"negated\": false,\n                        \"predicate\":
+    \"at\",\n                        \"args\": [\n                            \"?a\",\n                           
+    \"?l\"\n                        ]\n                    },\n                   
+    {\n                        \"negated\": false,\n                        \"predicate\":
+    \"has-wood\",\n                        \"args\": [\n                           
+    \"?a\"\n                        ]\n                    },\n                   
+    {\n                        \"negated\": false,\n                        \"predicate\":
+    \"workbench-at\",\n                        \"args\": [\n                           
+    \"?l\"\n                        ]\n                    }\n                ]\n           
+    },\n            \"effects\": [\n                {\n                    \"negative\":
+    false,\n                    \"predicate\": \"has-planks\",\n                   
+    \"args\": [\n                        \"?a\"\n                    ]\n               
+    },\n                {\n                    \"negative\": true,\n                   
+    \"predicate\": \"has-wood\",\n                    \"args\": [\n                       
+    \"?a\"\n                    ]\n                }\n            ]\n        },\n       
+    {\n            \"name\": \"build-furnace\",\n            \"parameters\": [\n               
+    {\n                    \"name\": \"?a\",\n                    \"type\": \"agent\"\n               
+    },\n                {\n                    \"name\": \"?l\",\n                   
+    \"type\": \"location\"\n                }\n            ],\n            \"precondition\":
+    {\n                \"op\": \"and\",\n                \"conditions\": [\n                   
+    {\n                        \"negated\": false,\n                        \"predicate\":
+    \"at\",\n                        \"args\": [\n                            \"?a\",\n                           
+    \"?l\"\n                        ]\n                    },\n                   
+    {\n                        \"negated\": false,\n                        \"predicate\":
+    \"has-planks\",\n                        \"args\": [\n                           
+    \"?a\"\n                        ]\n                    },\n                   
+    {\n                        \"negated\": false,\n                        \"predicate\":
+    \"workbench-at\",\n                        \"args\": [\n                           
+    \"?l\"\n                        ]\n                    },\n                   
+    {\n                        \"negated\": true,\n                        \"predicate\":
+    \"furnace-at\",\n                        \"args\": [\n                           
+    \"?l\"\n                        ]\n                    }\n                ]\n           
+    },\n            \"effects\": [\n                {\n                    \"negative\":
+    false,\n                    \"predicate\": \"furnace-at\",\n                   
+    \"args\": [\n                        \"?l\"\n                    ]\n               
+    },\n                {\n                    \"negative\": true,\n                   
+    \"predicate\": \"has-planks\",\n                    \"args\": [\n                       
+    \"?a\"\n                    ]\n                }\n            ]\n        },\n       
+    {\n            \"name\": \"smelt-ingot\",\n            \"parameters\": [\n               
+    {\n                    \"name\": \"?a\",\n                    \"type\": \"agent\"\n               
+    },\n                {\n                    \"name\": \"?l\",\n                   
+    \"type\": \"location\"\n                }\n            ],\n            \"precondition\":
+    {\n                \"op\": \"and\",\n                \"conditions\": [\n                   
+    {\n                        \"negated\": false,\n                        \"predicate\":
+    \"at\",\n                        \"args\": [\n                            \"?a\",\n                           
+    \"?l\"\n                        ]\n                    },\n                   
+    {\n                        \"negated\": false,\n                        \"predicate\":
+    \"has-iron-ore\",\n                        \"args\": [\n                           
+    \"?a\"\n                        ]\n                    },\n                   
+    {\n                        \"negated\": false,\n                        \"predicate\":
+    \"furnace-at\",\n                        \"args\": [\n                           
+    \"?l\"\n                        ]\n                    }\n                ]\n           
+    },\n            \"effects\": [\n                {\n                    \"negative\":
+    false,\n                    \"predicate\": \"has-iron-ingot\",\n                   
+    \"args\": [\n                        \"?a\"\n                    ]\n               
+    },\n                {\n                    \"negative\": true,\n                   
+    \"predicate\": \"has-iron-ore\",\n                    \"args\": [\n                       
+    \"?a\"\n                    ]\n                }\n            ]\n        },\n       
+    {\n            \"name\": \"forge-sword\",\n            \"parameters\": [\n               
+    {\n                    \"name\": \"?a\",\n                    \"type\": \"agent\"\n               
+    },\n                {\n                    \"name\": \"?l\",\n                   
+    \"type\": \"location\"\n                }\n            ],\n            \"precondition\":
+    {\n                \"op\": \"and\",\n                \"conditions\": [\n                   
+    {\n                        \"negated\": false,\n                        \"predicate\":
+    \"at\",\n                        \"args\": [\n                            \"?a\",\n                           
+    \"?l\"\n                        ]\n                    },\n                   
+    {\n                        \"negated\": false,\n                        \"predicate\":
+    \"has-iron-ingot\",\n                        \"args\": [\n                           
+    \"?a\"\n                        ]\n                    },\n                   
+    {\n                        \"negated\": false,\n                        \"predicate\":
+    \"workbench-at\",\n                        \"args\": [\n                           
+    \"?l\"\n                        ]\n                    },\n                   
+    {\n                        \"negated\": false,\n                        \"predicate\":
+    \"furnace-at\",\n                        \"args\": [\n                           
+    \"?l\"\n                        ]\n                    }\n                ]\n           
+    },\n            \"effects\": [\n                {\n                    \"negative\":
+    false,\n                    \"predicate\": \"has-iron-sword\",\n                   
+    \"args\": [\n                        \"?a\"\n                    ]\n               
+    }\n            ]\n        }\n    ]\n}"

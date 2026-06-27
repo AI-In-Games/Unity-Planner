@@ -1,0 +1,194 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 353eaf0ec1efc194d9d8527453a1c833, type: 3}
+  m_Name: Heist
+  m_EditorClassIdentifier: 
+  m_Json: "{\n    \"name\": \"heist\",\n    \"requirements\": [\n        \":strips\",\n       
+    \":typing\",\n        \":negative-preconditions\"\n    ],\n    \"types\": [\n       
+    {\n            \"name\": \"agent\",\n            \"parent\": \"object\"\n       
+    }\n    ],\n    \"predicates\": [\n        {\n            \"name\": \"location-cased\",\n           
+    \"parameters\": [\n                {\n                    \"name\": \"?a\",\n                   
+    \"type\": \"agent\"\n                }\n            ]\n        },\n        {\n           
+    \"name\": \"has-lockpicks\",\n            \"parameters\": [\n               
+    {\n                    \"name\": \"?a\",\n                    \"type\": \"agent\"\n               
+    }\n            ]\n        },\n        {\n            \"name\": \"disguised\",\n           
+    \"parameters\": [\n                {\n                    \"name\": \"?a\",\n                   
+    \"type\": \"agent\"\n                }\n            ]\n        },\n        {\n           
+    \"name\": \"camera-disabled\",\n            \"parameters\": [\n               
+    {\n                    \"name\": \"?a\",\n                    \"type\": \"agent\"\n               
+    }\n            ]\n        },\n        {\n            \"name\": \"vault-unlocked\",\n           
+    \"parameters\": [\n                {\n                    \"name\": \"?a\",\n                   
+    \"type\": \"agent\"\n                }\n            ]\n        },\n        {\n           
+    \"name\": \"in-vault\",\n            \"parameters\": [\n                {\n                   
+    \"name\": \"?a\",\n                    \"type\": \"agent\"\n                }\n           
+    ]\n        },\n        {\n            \"name\": \"safe-open\",\n            \"parameters\":
+    [\n                {\n                    \"name\": \"?a\",\n                   
+    \"type\": \"agent\"\n                }\n            ]\n        },\n        {\n           
+    \"name\": \"has-jewel\",\n            \"parameters\": [\n                {\n                   
+    \"name\": \"?a\",\n                    \"type\": \"agent\"\n                }\n           
+    ]\n        },\n        {\n            \"name\": \"has-noise-maker\",\n           
+    \"parameters\": [\n                {\n                    \"name\": \"?a\",\n                   
+    \"type\": \"agent\"\n                }\n            ]\n        },\n        {\n           
+    \"name\": \"guard-distracted\",\n            \"parameters\": [\n               
+    {\n                    \"name\": \"?a\",\n                    \"type\": \"agent\"\n               
+    }\n            ]\n        },\n        {\n            \"name\": \"escaped\",\n           
+    \"parameters\": [\n                {\n                    \"name\": \"?a\",\n                   
+    \"type\": \"agent\"\n                }\n            ]\n        }\n    ],\n   
+    \"actions\": [\n        {\n            \"name\": \"case-location\",\n           
+    \"parameters\": [\n                {\n                    \"name\": \"?a\",\n                   
+    \"type\": \"agent\"\n                }\n            ],\n            \"precondition\":
+    {\n                \"op\": \"and\",\n                \"conditions\": [\n                   
+    {\n                        \"negated\": true,\n                        \"predicate\":
+    \"location-cased\",\n                        \"args\": [\n                           
+    \"?a\"\n                        ]\n                    }\n                ]\n           
+    },\n            \"effects\": [\n                {\n                    \"negative\":
+    false,\n                    \"predicate\": \"location-cased\",\n                   
+    \"args\": [\n                        \"?a\"\n                    ]\n               
+    }\n            ]\n        },\n        {\n            \"name\": \"acquire-lockpicks\",\n           
+    \"parameters\": [\n                {\n                    \"name\": \"?a\",\n                   
+    \"type\": \"agent\"\n                }\n            ],\n            \"precondition\":
+    {\n                \"op\": \"and\",\n                \"conditions\": [\n                   
+    {\n                        \"negated\": true,\n                        \"predicate\":
+    \"has-lockpicks\",\n                        \"args\": [\n                           
+    \"?a\"\n                        ]\n                    }\n                ]\n           
+    },\n            \"effects\": [\n                {\n                    \"negative\":
+    false,\n                    \"predicate\": \"has-lockpicks\",\n                   
+    \"args\": [\n                        \"?a\"\n                    ]\n               
+    }\n            ]\n        },\n        {\n            \"name\": \"don-disguise\",\n           
+    \"parameters\": [\n                {\n                    \"name\": \"?a\",\n                   
+    \"type\": \"agent\"\n                }\n            ],\n            \"precondition\":
+    {\n                \"op\": \"and\",\n                \"conditions\": [\n                   
+    {\n                        \"negated\": true,\n                        \"predicate\":
+    \"disguised\",\n                        \"args\": [\n                           
+    \"?a\"\n                        ]\n                    }\n                ]\n           
+    },\n            \"effects\": [\n                {\n                    \"negative\":
+    false,\n                    \"predicate\": \"disguised\",\n                   
+    \"args\": [\n                        \"?a\"\n                    ]\n               
+    }\n            ]\n        },\n        {\n            \"name\": \"disable-camera\",\n           
+    \"parameters\": [\n                {\n                    \"name\": \"?a\",\n                   
+    \"type\": \"agent\"\n                }\n            ],\n            \"precondition\":
+    {\n                \"op\": \"and\",\n                \"conditions\": [\n                   
+    {\n                        \"negated\": false,\n                        \"predicate\":
+    \"location-cased\",\n                        \"args\": [\n                           
+    \"?a\"\n                        ]\n                    },\n                   
+    {\n                        \"negated\": true,\n                        \"predicate\":
+    \"camera-disabled\",\n                        \"args\": [\n                           
+    \"?a\"\n                        ]\n                    }\n                ]\n           
+    },\n            \"effects\": [\n                {\n                    \"negative\":
+    false,\n                    \"predicate\": \"camera-disabled\",\n                   
+    \"args\": [\n                        \"?a\"\n                    ]\n               
+    }\n            ]\n        },\n        {\n            \"name\": \"pick-lock\",\n           
+    \"parameters\": [\n                {\n                    \"name\": \"?a\",\n                   
+    \"type\": \"agent\"\n                }\n            ],\n            \"precondition\":
+    {\n                \"op\": \"and\",\n                \"conditions\": [\n                   
+    {\n                        \"negated\": false,\n                        \"predicate\":
+    \"has-lockpicks\",\n                        \"args\": [\n                           
+    \"?a\"\n                        ]\n                    },\n                   
+    {\n                        \"negated\": false,\n                        \"predicate\":
+    \"camera-disabled\",\n                        \"args\": [\n                           
+    \"?a\"\n                        ]\n                    },\n                   
+    {\n                        \"negated\": true,\n                        \"predicate\":
+    \"vault-unlocked\",\n                        \"args\": [\n                           
+    \"?a\"\n                        ]\n                    }\n                ]\n           
+    },\n            \"effects\": [\n                {\n                    \"negative\":
+    false,\n                    \"predicate\": \"vault-unlocked\",\n                   
+    \"args\": [\n                        \"?a\"\n                    ]\n               
+    }\n            ]\n        },\n        {\n            \"name\": \"enter-vault\",\n           
+    \"parameters\": [\n                {\n                    \"name\": \"?a\",\n                   
+    \"type\": \"agent\"\n                }\n            ],\n            \"precondition\":
+    {\n                \"op\": \"and\",\n                \"conditions\": [\n                   
+    {\n                        \"negated\": false,\n                        \"predicate\":
+    \"disguised\",\n                        \"args\": [\n                           
+    \"?a\"\n                        ]\n                    },\n                   
+    {\n                        \"negated\": false,\n                        \"predicate\":
+    \"vault-unlocked\",\n                        \"args\": [\n                           
+    \"?a\"\n                        ]\n                    },\n                   
+    {\n                        \"negated\": true,\n                        \"predicate\":
+    \"in-vault\",\n                        \"args\": [\n                           
+    \"?a\"\n                        ]\n                    }\n                ]\n           
+    },\n            \"effects\": [\n                {\n                    \"negative\":
+    false,\n                    \"predicate\": \"in-vault\",\n                   
+    \"args\": [\n                        \"?a\"\n                    ]\n               
+    }\n            ]\n        },\n        {\n            \"name\": \"crack-safe\",\n           
+    \"parameters\": [\n                {\n                    \"name\": \"?a\",\n                   
+    \"type\": \"agent\"\n                }\n            ],\n            \"precondition\":
+    {\n                \"op\": \"and\",\n                \"conditions\": [\n                   
+    {\n                        \"negated\": false,\n                        \"predicate\":
+    \"in-vault\",\n                        \"args\": [\n                           
+    \"?a\"\n                        ]\n                    },\n                   
+    {\n                        \"negated\": true,\n                        \"predicate\":
+    \"safe-open\",\n                        \"args\": [\n                           
+    \"?a\"\n                        ]\n                    }\n                ]\n           
+    },\n            \"effects\": [\n                {\n                    \"negative\":
+    false,\n                    \"predicate\": \"safe-open\",\n                   
+    \"args\": [\n                        \"?a\"\n                    ]\n               
+    }\n            ]\n        },\n        {\n            \"name\": \"steal-jewel\",\n           
+    \"parameters\": [\n                {\n                    \"name\": \"?a\",\n                   
+    \"type\": \"agent\"\n                }\n            ],\n            \"precondition\":
+    {\n                \"op\": \"and\",\n                \"conditions\": [\n                   
+    {\n                        \"negated\": false,\n                        \"predicate\":
+    \"in-vault\",\n                        \"args\": [\n                           
+    \"?a\"\n                        ]\n                    },\n                   
+    {\n                        \"negated\": false,\n                        \"predicate\":
+    \"safe-open\",\n                        \"args\": [\n                           
+    \"?a\"\n                        ]\n                    },\n                   
+    {\n                        \"negated\": true,\n                        \"predicate\":
+    \"has-jewel\",\n                        \"args\": [\n                           
+    \"?a\"\n                        ]\n                    }\n                ]\n           
+    },\n            \"effects\": [\n                {\n                    \"negative\":
+    false,\n                    \"predicate\": \"has-jewel\",\n                   
+    \"args\": [\n                        \"?a\"\n                    ]\n               
+    }\n            ]\n        },\n        {\n            \"name\": \"use-noise-maker\",\n           
+    \"parameters\": [\n                {\n                    \"name\": \"?a\",\n                   
+    \"type\": \"agent\"\n                }\n            ],\n            \"precondition\":
+    {\n                \"op\": \"and\",\n                \"conditions\": [\n                   
+    {\n                        \"negated\": false,\n                        \"predicate\":
+    \"has-noise-maker\",\n                        \"args\": [\n                           
+    \"?a\"\n                        ]\n                    },\n                   
+    {\n                        \"negated\": true,\n                        \"predicate\":
+    \"guard-distracted\",\n                        \"args\": [\n                           
+    \"?a\"\n                        ]\n                    }\n                ]\n           
+    },\n            \"effects\": [\n                {\n                    \"negative\":
+    false,\n                    \"predicate\": \"guard-distracted\",\n                   
+    \"args\": [\n                        \"?a\"\n                    ]\n               
+    },\n                {\n                    \"negative\": true,\n                   
+    \"predicate\": \"has-noise-maker\",\n                    \"args\": [\n                       
+    \"?a\"\n                    ]\n                }\n            ]\n        },\n       
+    {\n            \"name\": \"exit-vault\",\n            \"parameters\": [\n               
+    {\n                    \"name\": \"?a\",\n                    \"type\": \"agent\"\n               
+    }\n            ],\n            \"precondition\": {\n                \"op\": \"and\",\n               
+    \"conditions\": [\n                    {\n                        \"negated\":
+    false,\n                        \"predicate\": \"in-vault\",\n                       
+    \"args\": [\n                            \"?a\"\n                        ]\n                   
+    },\n                    {\n                        \"negated\": false,\n                       
+    \"predicate\": \"guard-distracted\",\n                        \"args\": [\n                           
+    \"?a\"\n                        ]\n                    },\n                   
+    {\n                        \"negated\": false,\n                        \"predicate\":
+    \"has-jewel\",\n                        \"args\": [\n                           
+    \"?a\"\n                        ]\n                    }\n                ]\n           
+    },\n            \"effects\": [\n                {\n                    \"negative\":
+    true,\n                    \"predicate\": \"in-vault\",\n                   
+    \"args\": [\n                        \"?a\"\n                    ]\n               
+    }\n            ]\n        },\n        {\n            \"name\": \"escape\",\n           
+    \"parameters\": [\n                {\n                    \"name\": \"?a\",\n                   
+    \"type\": \"agent\"\n                }\n            ],\n            \"precondition\":
+    {\n                \"op\": \"and\",\n                \"conditions\": [\n                   
+    {\n                        \"negated\": true,\n                        \"predicate\":
+    \"in-vault\",\n                        \"args\": [\n                           
+    \"?a\"\n                        ]\n                    },\n                   
+    {\n                        \"negated\": false,\n                        \"predicate\":
+    \"has-jewel\",\n                        \"args\": [\n                           
+    \"?a\"\n                        ]\n                    }\n                ]\n           
+    },\n            \"effects\": [\n                {\n                    \"negative\":
+    false,\n                    \"predicate\": \"escaped\",\n                   
+    \"args\": [\n                        \"?a\"\n                    ]\n               
+    }\n            ]\n        }\n    ]\n}"

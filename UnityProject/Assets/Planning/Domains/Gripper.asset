@@ -1,0 +1,120 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 353eaf0ec1efc194d9d8527453a1c833, type: 3}
+  m_Name: Gripper
+  m_EditorClassIdentifier: 
+  m_Json: "{\n    \"name\": \"gripper-strips\",\n    \"requirements\": [],\n    \"types\":
+    [],\n    \"predicates\": [\n        {\n            \"name\": \"room\",\n           
+    \"parameters\": [\n                {\n                    \"name\": \"?r\",\n                   
+    \"type\": \"object\"\n                }\n            ]\n        },\n        {\n           
+    \"name\": \"ball\",\n            \"parameters\": [\n                {\n                   
+    \"name\": \"?b\",\n                    \"type\": \"object\"\n               
+    }\n            ]\n        },\n        {\n            \"name\": \"gripper\",\n           
+    \"parameters\": [\n                {\n                    \"name\": \"?g\",\n                   
+    \"type\": \"object\"\n                }\n            ]\n        },\n        {\n           
+    \"name\": \"at-robby\",\n            \"parameters\": [\n                {\n                   
+    \"name\": \"?r\",\n                    \"type\": \"object\"\n               
+    }\n            ]\n        },\n        {\n            \"name\": \"at\",\n           
+    \"parameters\": [\n                {\n                    \"name\": \"?b\",\n                   
+    \"type\": \"object\"\n                },\n                {\n                   
+    \"name\": \"?r\",\n                    \"type\": \"object\"\n               
+    }\n            ]\n        },\n        {\n            \"name\": \"free\",\n           
+    \"parameters\": [\n                {\n                    \"name\": \"?g\",\n                   
+    \"type\": \"object\"\n                }\n            ]\n        },\n        {\n           
+    \"name\": \"carry\",\n            \"parameters\": [\n                {\n                   
+    \"name\": \"?o\",\n                    \"type\": \"object\"\n               
+    },\n                {\n                    \"name\": \"?g\",\n                   
+    \"type\": \"object\"\n                }\n            ]\n        }\n    ],\n   
+    \"actions\": [\n        {\n            \"name\": \"move\",\n            \"parameters\":
+    [\n                {\n                    \"name\": \"?from\",\n                   
+    \"type\": \"room\"\n                },\n                {\n                   
+    \"name\": \"?to\",\n                    \"type\": \"room\"\n                }\n           
+    ],\n            \"precondition\": {\n                \"op\": \"and\",\n               
+    \"conditions\": [\n                    {\n                        \"negated\":
+    false,\n                        \"predicate\": \"room\",\n                       
+    \"args\": [\n                            \"?from\"\n                        ]\n                   
+    },\n                    {\n                        \"negated\": false,\n                       
+    \"predicate\": \"room\",\n                        \"args\": [\n                           
+    \"?to\"\n                        ]\n                    },\n                   
+    {\n                        \"negated\": false,\n                        \"predicate\":
+    \"at-robby\",\n                        \"args\": [\n                           
+    \"?from\"\n                        ]\n                    }\n               
+    ]\n            },\n            \"effects\": [\n                {\n                   
+    \"negative\": false,\n                    \"predicate\": \"at-robby\",\n                   
+    \"args\": [\n                        \"?to\"\n                    ]\n               
+    },\n                {\n                    \"negative\": true,\n                   
+    \"predicate\": \"at-robby\",\n                    \"args\": [\n                       
+    \"?from\"\n                    ]\n                }\n            ]\n        },\n       
+    {\n            \"name\": \"pick\",\n            \"parameters\": [\n               
+    {\n                    \"name\": \"?obj\",\n                    \"type\": \"ball\"\n               
+    },\n                {\n                    \"name\": \"?room\",\n                   
+    \"type\": \"room\"\n                },\n                {\n                   
+    \"name\": \"?gripper\",\n                    \"type\": \"gripper\"\n               
+    }\n            ],\n            \"precondition\": {\n                \"op\": \"and\",\n               
+    \"conditions\": [\n                    {\n                        \"negated\":
+    false,\n                        \"predicate\": \"ball\",\n                       
+    \"args\": [\n                            \"?obj\"\n                        ]\n                   
+    },\n                    {\n                        \"negated\": false,\n                       
+    \"predicate\": \"room\",\n                        \"args\": [\n                           
+    \"?room\"\n                        ]\n                    },\n                   
+    {\n                        \"negated\": false,\n                        \"predicate\":
+    \"gripper\",\n                        \"args\": [\n                           
+    \"?gripper\"\n                        ]\n                    },\n                   
+    {\n                        \"negated\": false,\n                        \"predicate\":
+    \"at\",\n                        \"args\": [\n                            \"?obj\",\n                           
+    \"?room\"\n                        ]\n                    },\n                   
+    {\n                        \"negated\": false,\n                        \"predicate\":
+    \"at-robby\",\n                        \"args\": [\n                           
+    \"?room\"\n                        ]\n                    },\n                   
+    {\n                        \"negated\": false,\n                        \"predicate\":
+    \"free\",\n                        \"args\": [\n                            \"?gripper\"\n                       
+    ]\n                    }\n                ]\n            },\n            \"effects\":
+    [\n                {\n                    \"negative\": false,\n                   
+    \"predicate\": \"carry\",\n                    \"args\": [\n                       
+    \"?obj\",\n                        \"?gripper\"\n                    ]\n               
+    },\n                {\n                    \"negative\": true,\n                   
+    \"predicate\": \"at\",\n                    \"args\": [\n                       
+    \"?obj\",\n                        \"?room\"\n                    ]\n               
+    },\n                {\n                    \"negative\": true,\n                   
+    \"predicate\": \"free\",\n                    \"args\": [\n                       
+    \"?gripper\"\n                    ]\n                }\n            ]\n       
+    },\n        {\n            \"name\": \"drop\",\n            \"parameters\": [\n               
+    {\n                    \"name\": \"?obj\",\n                    \"type\": \"ball\"\n               
+    },\n                {\n                    \"name\": \"?room\",\n                   
+    \"type\": \"room\"\n                },\n                {\n                   
+    \"name\": \"?gripper\",\n                    \"type\": \"gripper\"\n               
+    }\n            ],\n            \"precondition\": {\n                \"op\": \"and\",\n               
+    \"conditions\": [\n                    {\n                        \"negated\":
+    false,\n                        \"predicate\": \"ball\",\n                       
+    \"args\": [\n                            \"?obj\"\n                        ]\n                   
+    },\n                    {\n                        \"negated\": false,\n                       
+    \"predicate\": \"room\",\n                        \"args\": [\n                           
+    \"?room\"\n                        ]\n                    },\n                   
+    {\n                        \"negated\": false,\n                        \"predicate\":
+    \"gripper\",\n                        \"args\": [\n                           
+    \"?gripper\"\n                        ]\n                    },\n                   
+    {\n                        \"negated\": false,\n                        \"predicate\":
+    \"carry\",\n                        \"args\": [\n                           
+    \"?obj\",\n                            \"?gripper\"\n                       
+    ]\n                    },\n                    {\n                        \"negated\":
+    false,\n                        \"predicate\": \"at-robby\",\n                       
+    \"args\": [\n                            \"?room\"\n                        ]\n                   
+    }\n                ]\n            },\n            \"effects\": [\n               
+    {\n                    \"negative\": false,\n                    \"predicate\":
+    \"at\",\n                    \"args\": [\n                        \"?obj\",\n                       
+    \"?room\"\n                    ]\n                },\n                {\n                   
+    \"negative\": false,\n                    \"predicate\": \"free\",\n                   
+    \"args\": [\n                        \"?gripper\"\n                    ]\n               
+    },\n                {\n                    \"negative\": true,\n                   
+    \"predicate\": \"carry\",\n                    \"args\": [\n                       
+    \"?obj\",\n                        \"?gripper\"\n                    ]\n               
+    }\n            ]\n        }\n    ]\n}"
