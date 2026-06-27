@@ -1,0 +1,16 @@
+{
+    "name": "AiInGames.Planning.Search",
+    "rootNamespace": "AiInGames.Planning.Runtime",
+    "references": [
+        "AiInGames.Planning.Core"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": true
+}

@@ -1,0 +1,195 @@
+/* Planning Graph Editor - Main Styles */
+
+/* Graph View */
+.planning-graph-view {
+    background-color: #1e1e1e;
+}
+
+/* Action Nodes */
+.action-node {
+    background-color: rgba(0, 150, 150, 0.85);
+    border-color: rgb(0, 200, 200);
+    border-width: 2px;
+    border-radius: 8px;
+    min-width: 220px;
+    min-height: 100px;
+}
+
+.action-node:hover {
+    border-color: rgb(0, 255, 255);
+    background-color: rgba(0, 150, 150, 0.95);
+}
+
+.action-node:selected {
+    border-color: rgb(255, 150, 0);
+    border-width: 3px;
+}
+
+/* Action node runtime states */
+.action-node.executing {
+    border-color: rgb(0, 150, 255);
+}
+
+.action-node.considering {
+    border-color: rgb(255, 200, 0);
+}
+
+.action-node.failed {
+    border-color: rgb(255, 50, 50);
+    background-color: rgba(150, 0, 0, 0.3);
+}
+
+/* Predicate Nodes */
+.predicate-node {
+    background-color: rgba(255, 200, 0, 0.85);
+    border-color: rgb(255, 220, 0);
+    border-width: 2px;
+    border-radius: 16px;
+    min-width: 150px;
+}
+
+.predicate-node:hover {
+    border-color: rgb(255, 255, 0);
+    background-color: rgba(255, 200, 0, 0.95);
+}
+
+.predicate-node:selected {
+    border-color: rgb(255, 150, 0);
+    border-width: 3px;
+}
+
+/* Type Nodes */
+.type-node {
+    background-color: rgba(150, 0, 200, 0.85);
+    border-color: rgb(180, 0, 255);
+    border-width: 2px;
+    border-radius: 6px;
+    min-width: 120px;
+}
+
+.type-node:hover {
+    border-color: rgb(200, 50, 255);
+    background-color: rgba(150, 0, 200, 0.95);
+}
+
+.type-node:selected {
+    border-color: rgb(255, 150, 0);
+    border-width: 3px;
+}
+
+/* Comment Nodes */
+.comment-node {
+    background-color: rgba(100, 100, 100, 0.3);
+    border-color: rgb(150, 150, 150);
+    border-width: 1px;
+    border-radius: 4px;
+}
+
+/* Section Containers */
+.parameters-container {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-left-width: 3px;
+    border-left-color: rgb(100, 100, 255);
+    padding: 6px;
+    margin: 4px;
+    border-radius: 4px;
+}
+
+.precondition-container {
+    background-color: rgba(0, 255, 0, 0.1);
+    border-left-width: 3px;
+    border-left-color: rgb(0, 255, 0);
+    padding: 6px;
+    margin: 4px;
+    border-radius: 4px;
+}
+
+.effect-container {
+    background-color: rgba(0, 100, 255, 0.1);
+    border-left-width: 3px;
+    border-left-color: rgb(0, 150, 255);
+    padding: 6px;
+    margin: 4px;
+    border-radius: 4px;
+}
+
+/* Section Labels */
+.section-label {
+    font-size: 11px;
+    -unity-font-style: bold;
+    color: rgb(200, 200, 200);
+    margin-bottom: 4px;
+}
+
+.empty-label {
+    font-size: 10px;
+    -unity-font-style: italic;
+    color: rgb(150, 150, 150);
+    padding: 2px;
+}
+
+/* Ports */
+Port {
+    height: 16px;
+    width: 16px;
+}
+
+.port-input {
+    background-color: rgb(50, 150, 255);
+    border-radius: 8px;
+}
+
+.port-output {
+    background-color: rgb(255, 150, 50);
+    border-radius: 8px;
+}
+
+/* Edges/Connections */
+.edge {
+    --edge-width: 2px;
+    --edge-color: rgb(150, 150, 150);
+}
+
+.edge:hover {
+    --edge-width: 3px;
+    --edge-color: rgb(255, 255, 255);
+}
+
+.edge.selected {
+    --edge-width: 3px;
+    --edge-color: rgb(255, 150, 0);
+}
+
+/* Toolbar */
+.planning-toolbar {
+    background-color: rgb(60, 60, 60);
+    border-bottom-width: 1px;
+    border-bottom-color: rgb(40, 40, 40);
+    padding: 4px;
+}
+
+/* Validation Indicators */
+.validation-error {
+    background-color: rgba(255, 0, 0, 0.2);
+    border-left-width: 4px;
+    border-left-color: rgb(255, 0, 0);
+}
+
+.validation-warning {
+    background-color: rgba(255, 200, 0, 0.2);
+    border-left-width: 4px;
+    border-left-color: rgb(255, 200, 0);
+}
+
+.validation-info {
+    background-color: rgba(0, 150, 255, 0.2);
+    border-left-width: 4px;
+    border-left-color: rgb(0, 150, 255);
+}
+
+/* Minimap */
+.minimap {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-width: 1px;
+    border-color: rgb(100, 100, 100);
+}

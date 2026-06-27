@@ -1,0 +1,19 @@
+{
+    "name": "AiInGames.Planning",
+    "rootNamespace": "AiInGames.Planning.Unity",
+    "references": [
+        "AiInGames.Planning.Core",
+        "AiInGames.Planning.Search",
+        "AIInGames.Planning.PDDL",
+        "AiInGames.Blackboard"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,864 @@
+/* Domain Editor Styles - Unity USS */
+
+/* ── Toolbar ───────────────────────────────────────────────────────────────── */
+
+.toolbar {
+    background-color: rgba(45, 45, 45, 0.95);
+    flex-direction: row;
+    border-bottom-width: 1px;
+    border-bottom-color: rgba(80, 80, 80, 0.6);
+    padding: 4px 8px;
+    height: 32px;
+    align-items: center;
+}
+
+/* ── Panels ────────────────────────────────────────────────────────────────── */
+
+.navigation-panel {
+    background-color: rgba(42, 42, 42, 0.5);
+    padding: 8px 8px 6px 8px;
+    flex-direction: column;
+}
+
+.main-editor-panel {
+    background-color: rgba(38, 38, 38, 0.3);
+    padding: 0;
+}
+
+/* ── Actions Section (primary) ─────────────────────────────────────────────── */
+
+.action-section {
+    flex-grow: 1;
+    flex-direction: column;
+    min-height: 120px;
+}
+
+.section-header-row {
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.actions-section-label {
+    flex-grow: 1;
+    font-size: 11px;
+    -unity-font-style: bold;
+    color: rgb(0, 210, 210);
+    letter-spacing: 1px;
+    padding-left: 2px;
+}
+
+.add-inline-button {
+    height: 22px;
+    padding: 0 10px;
+    font-size: 11px;
+    background-color: rgba(0, 180, 180, 0.15);
+    border-color: rgba(0, 180, 180, 0.4);
+    color: rgb(0, 220, 220);
+    flex-shrink: 0;
+}
+
+.add-inline-button:hover {
+    background-color: rgba(0, 180, 180, 0.3);
+    border-color: rgba(0, 180, 180, 0.7);
+}
+
+.search-field {
+    margin-bottom: 6px;
+}
+
+/* ── Action List Items ─────────────────────────────────────────────────────── */
+
+.action-list-item {
+    flex-direction: row;
+    align-items: center;
+    padding: 5px 8px;
+    justify-content: space-between;
+}
+
+.action-list-name {
+    flex-grow: 1;
+    font-size: 12px;
+    color: rgb(220, 220, 220);
+    -unity-text-align: middle-left;
+}
+
+.action-list-stats {
+    font-size: 10px;
+    color: rgba(160, 160, 160, 0.7);
+    -unity-text-align: middle-right;
+    flex-shrink: 0;
+    margin-left: 6px;
+}
+
+/* ── Empty State ───────────────────────────────────────────────────────────── */
+
+.empty-hint {
+    align-items: center;
+    justify-content: center;
+    padding: 20px 10px;
+}
+
+.empty-hint-label {
+    font-size: 12px;
+    color: rgba(160, 160, 160, 0.8);
+    -unity-text-align: middle-center;
+    margin-bottom: 4px;
+}
+
+.empty-hint-sub {
+    font-size: 10px;
+    color: rgba(130, 130, 130, 0.7);
+    -unity-text-align: middle-center;
+    white-space: normal;
+}
+
+/* Main panel placeholder */
+.placeholder-hint {
+    flex-grow: 1;
+    -unity-text-align: middle-center;
+    font-size: 12px;
+    color: rgba(150, 150, 150, 0.6);
+    padding: 40px;
+    white-space: normal;
+}
+
+/* ── Secondary Sections (State Facts / Object Types) ───────────────────────── */
+
+.secondary-divider {
+    height: 1px;
+    background-color: rgba(90, 90, 90, 0.4);
+    margin-top: 6px;
+    margin-bottom: 4px;
+}
+
+.secondary-foldout {
+    margin-bottom: 3px;
+}
+
+.secondary-foldout > .unity-foldout__toggle > .unity-label {
+    font-size: 11px;
+    color: rgba(180, 180, 180, 0.75);
+}
+
+.secondary-add-button {
+    height: 20px;
+    padding: 0 8px;
+    font-size: 10px;
+    margin-top: 4px;
+    align-self: flex-start;
+}
+
+/* ── Lists and Trees ───────────────────────────────────────────────────────── */
+
+ListView, TreeView {
+    border-width: 1px;
+    border-color: rgba(80, 80, 80, 0.5);
+    border-radius: 3px;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+ListView:focus, TreeView:focus {
+    border-color: rgba(0, 150, 255, 0.7);
+}
+
+.unity-list-view__item {
+    border-bottom-width: 1px;
+    border-bottom-color: rgba(70, 70, 70, 0.25);
+    -unity-text-align: middle-left;
+}
+
+.unity-tree-view__item {
+    padding: 5px 8px;
+    -unity-text-align: middle-left;
+    font-size: 11px;
+}
+
+.unity-list-view__item:hover {
+    background-color: rgba(255, 255, 255, 0.04);
+}
+
+.unity-list-view__item:selected {
+    background-color: rgba(0, 150, 255, 0.25);
+}
+
+/* ── Buttons (defaults) ────────────────────────────────────────────────────── */
+
+Button {
+    padding: 4px 10px;
+    border-radius: 3px;
+    border-width: 1px;
+    border-color: rgba(90, 90, 90, 0.6);
+    background-color: rgba(65, 65, 65, 0.6);
+    height: 22px;
+    font-size: 11px;
+}
+
+Button:hover {
+    background-color: rgba(85, 85, 85, 0.8);
+    border-color: rgba(110, 110, 110, 0.8);
+}
+
+Button:active {
+    background-color: rgba(45, 45, 45, 0.95);
+}
+
+/* ── Text Fields ───────────────────────────────────────────────────────────── */
+
+TextField > Label {
+    min-width: 100px;
+    font-size: 11px;
+    color: rgb(200, 200, 200);
+}
+
+TextField .unity-text-field__input {
+    background-color: rgba(35, 35, 35, 0.8);
+    border-color: rgba(80, 80, 80, 0.6);
+    border-radius: 3px;
+    padding: 3px 6px;
+    font-size: 11px;
+}
+
+TextField .unity-text-field__input:focus {
+    border-color: rgba(0, 150, 255, 0.8);
+}
+
+/* ── Split View ────────────────────────────────────────────────────────────── */
+
+TwoPaneSplitView {
+    flex-grow: 1;
+}
+
+.unity-two-pane-split-view__dragline {
+    background-color: rgba(80, 80, 80, 0.3);
+}
+
+.unity-two-pane-split-view__dragline:hover {
+    background-color: rgba(0, 150, 255, 0.5);
+}
+
+/* ── Action Editor Root ────────────────────────────────────────────────────── */
+
+.action-editor-root {
+    padding: 14px 16px;
+}
+
+/* Action name + delete header */
+.action-header-row {
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.action-name-field {
+    flex-grow: 1;
+    margin-right: 8px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.action-name-field > Label {
+    display: none;
+}
+
+.action-name-field .unity-text-field__input {
+    font-size: 14px;
+    -unity-font-style: bold;
+    color: rgb(230, 230, 230);
+    padding: 5px 8px;
+}
+
+/* Danger button (delete action) */
+.danger-button-small {
+    height: 26px;
+    padding: 0 10px;
+    background-color: rgba(100, 0, 0, 0.25);
+    border-color: rgba(160, 0, 0, 0.5);
+    color: rgb(210, 90, 90);
+    font-size: 11px;
+    flex-shrink: 0;
+}
+
+.danger-button-small:hover {
+    background-color: rgba(150, 0, 0, 0.45);
+    border-color: rgba(200, 0, 0, 0.7);
+    color: rgb(240, 120, 120);
+}
+
+/* ── Editor Sections ───────────────────────────────────────────────────────── */
+
+.editor-section {
+    border-radius: 4px;
+    padding: 8px 10px 10px 10px;
+    margin-bottom: 12px;
+    border-width: 1px;
+    border-left-width: 3px;
+}
+
+.section-title-row {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4px;
+}
+
+.editor-section-label {
+    font-size: 10px;
+    -unity-font-style: bold;
+    letter-spacing: 1px;
+}
+
+.section-subtitle {
+    font-size: 10px;
+    color: rgba(160, 160, 160, 0.65);
+    -unity-font-style: italic;
+    margin-bottom: 6px;
+}
+
+.section-add-button {
+    height: 20px;
+    padding: 0 8px;
+    font-size: 10px;
+    flex-shrink: 0;
+}
+
+/* Parameters section */
+.param-section {
+    border-color: rgba(110, 90, 220, 0.2);
+    border-left-color: rgba(110, 90, 220, 0.55);
+    background-color: rgba(110, 90, 220, 0.04);
+}
+
+.param-label {
+    color: rgb(180, 160, 255);
+}
+
+/* Requirements section */
+.requirement-section {
+    border-color: rgba(0, 190, 80, 0.2);
+    border-left-color: rgba(0, 190, 80, 0.6);
+    background-color: rgba(0, 190, 80, 0.04);
+}
+
+.requirement-label {
+    color: rgb(100, 210, 130);
+}
+
+/* Effects section */
+.effect-section {
+    border-color: rgba(0, 140, 255, 0.2);
+    border-left-color: rgba(0, 140, 255, 0.6);
+    background-color: rgba(0, 140, 255, 0.04);
+}
+
+.effect-label {
+    color: rgb(100, 170, 255);
+}
+
+/* ── Parameter Rows ────────────────────────────────────────────────────────── */
+
+.parameter-row {
+    flex-direction: row;
+    align-items: center;
+    margin-top: 4px;
+    padding: 3px 4px;
+    background-color: rgba(110, 90, 220, 0.06);
+    border-left-width: 2px;
+    border-left-color: rgba(110, 90, 220, 0.35);
+    border-radius: 3px;
+}
+
+.param-type-dropdown {
+    width: 90px;
+    margin-right: 5px;
+    flex-shrink: 0;
+}
+
+.param-name-field {
+    flex-grow: 1;
+    margin: 0 5px 0 0;
+}
+
+.param-name-field > Label {
+    display: none;
+}
+
+/* ── Condition Rows (flat) ─────────────────────────────────────────────────── */
+
+.condition-row-flat {
+    flex-direction: row;
+    align-items: center;
+    margin-top: 4px;
+    padding: 3px 4px;
+    background-color: rgba(0, 190, 80, 0.06);
+    border-left-width: 2px;
+    border-left-color: rgba(0, 190, 80, 0.3);
+    border-radius: 3px;
+}
+
+/* NOT toggle — inactive state */
+.not-toggle {
+    width: 34px;
+    height: 20px;
+    padding: 0;
+    font-size: 9px;
+    -unity-font-style: bold;
+    background-color: rgba(70, 70, 70, 0.5);
+    border-color: rgba(90, 90, 90, 0.5);
+    color: rgba(160, 160, 160, 0.5);
+    margin-right: 4px;
+    flex-shrink: 0;
+}
+
+.not-toggle:hover {
+    background-color: rgba(160, 50, 50, 0.3);
+    border-color: rgba(180, 70, 70, 0.5);
+    color: rgba(220, 140, 140, 0.8);
+}
+
+/* NOT toggle — active state */
+.not-toggle--active {
+    background-color: rgba(180, 40, 40, 0.5);
+    border-color: rgba(210, 70, 70, 0.7);
+    color: rgb(240, 180, 180);
+}
+
+.not-toggle--active:hover {
+    background-color: rgba(200, 50, 50, 0.65);
+}
+
+/* ── Effect Rows (flat) ────────────────────────────────────────────────────── */
+
+.effect-row-flat {
+    flex-direction: row;
+    align-items: center;
+    margin-top: 4px;
+    padding: 3px 4px;
+    background-color: rgba(0, 140, 255, 0.06);
+    border-left-width: 2px;
+    border-left-color: rgba(0, 140, 255, 0.3);
+    border-radius: 3px;
+}
+
+/* Effect type toggle — Add */
+.effect-type--add {
+    width: 58px;
+    height: 20px;
+    padding: 0;
+    font-size: 9px;
+    -unity-font-style: bold;
+    background-color: rgba(0, 140, 0, 0.35);
+    border-color: rgba(0, 180, 0, 0.5);
+    color: rgb(140, 220, 140);
+    margin-right: 4px;
+    flex-shrink: 0;
+}
+
+.effect-type--add:hover {
+    background-color: rgba(0, 140, 0, 0.5);
+    border-color: rgba(0, 200, 0, 0.7);
+}
+
+/* Effect type toggle — Remove */
+.effect-type--remove {
+    width: 58px;
+    height: 20px;
+    padding: 0;
+    font-size: 9px;
+    -unity-font-style: bold;
+    background-color: rgba(160, 30, 30, 0.4);
+    border-color: rgba(200, 60, 60, 0.6);
+    color: rgb(230, 150, 150);
+    margin-right: 4px;
+    flex-shrink: 0;
+}
+
+.effect-type--remove:hover {
+    background-color: rgba(180, 40, 40, 0.55);
+    border-color: rgba(210, 70, 70, 0.75);
+}
+
+/* ── Shared Row Elements ───────────────────────────────────────────────────── */
+
+/* Predicate dropdown inside condition/effect rows */
+.predicate-dropdown {
+    flex-grow: 1;
+    min-width: 80px;
+    margin-right: 4px;
+}
+
+/* Container for argument dropdowns inside a row */
+.row-args-container {
+    flex-direction: row;
+    flex-grow: 1;
+    flex-shrink: 1;
+    align-items: center;
+}
+
+/* Individual argument dropdown */
+.arg-dropdown {
+    min-width: 55px;
+    max-width: 100px;
+    margin-right: 3px;
+}
+
+/* Delete button on the right of each row */
+.row-delete-button {
+    width: 22px;
+    height: 20px;
+    padding: 0;
+    font-size: 12px;
+    background-color: rgba(80, 80, 80, 0.3);
+    border-color: rgba(90, 90, 90, 0.4);
+    color: rgba(180, 180, 180, 0.6);
+    flex-shrink: 0;
+    margin-left: 2px;
+}
+
+.row-delete-button:hover {
+    background-color: rgba(160, 30, 30, 0.5);
+    border-color: rgba(200, 60, 60, 0.7);
+    color: rgb(240, 160, 160);
+}
+
+/* Complex group placeholder (AND/OR nodes — rare) */
+.group-placeholder {
+    font-size: 10px;
+    color: rgba(180, 180, 100, 0.7);
+    -unity-font-style: italic;
+    padding: 3px 6px;
+    margin-top: 4px;
+    border-left-width: 2px;
+    border-left-color: rgba(180, 180, 80, 0.4);
+}
+
+/* ── Predicate / Type Editors ──────────────────────────────────────────────── */
+
+.subsection-label {
+    -unity-font-style: bold;
+    margin-top: 12px;
+    margin-bottom: 4px;
+    font-size: 11px;
+    color: rgb(200, 200, 200);
+}
+
+.placeholder-text {
+    font-size: 10px;
+    color: rgba(160, 160, 160, 0.65);
+    -unity-font-style: italic;
+}
+
+/* ── PDDL Preview ──────────────────────────────────────────────────────────── */
+
+.pddl-preview {
+    flex-grow: 1;
+    font-size: 11px;
+}
+
+.pddl-preview .unity-text-field__input {
+    background-color: rgba(20, 20, 20, 0.9);
+}
+
+/* ── Legacy (keep for TypeEditor / PredicateEditor templates) ──────────────── */
+
+.field-spacing {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.section-header {
+    font-size: 12px;
+    -unity-font-style: bold;
+    margin-bottom: 6px;
+    color: rgb(210, 210, 210);
+}
+
+/* ── Custom Dropdown Button (Button + GenericMenu, supports separators) ──────── */
+
+.custom-dropdown-button {
+    background-color: rgba(35, 35, 35, 0.8);
+    border-color: rgba(80, 80, 80, 0.6);
+    border-radius: 3px;
+    border-width: 1px;
+    padding: 0 4px 0 6px;
+    height: 20px;
+    font-size: 11px;
+    flex-shrink: 0;
+}
+
+.custom-dropdown-button:hover {
+    background-color: rgba(55, 55, 55, 0.9);
+    border-color: rgba(110, 110, 110, 0.8);
+}
+
+.custom-dropdown-button > Label {
+    font-size: 11px;
+    color: rgb(200, 200, 200);
+    padding: 0;
+    margin: 0;
+    min-width: 0;
+}
+
+.custom-dropdown-arrow {
+    font-size: 10px;
+    color: rgba(180, 180, 180, 0.6);
+    margin-left: 3px;
+    flex-shrink: 0;
+}
+
+/* ── Row Group (row + inline create form stacked below) ────────────────────── */
+
+.row-group {
+    flex-direction: column;
+    margin-top: 4px;
+}
+
+/* Remove top margin from the inner row since row-group provides it */
+.row-group > .parameter-row,
+.row-group > .condition-row-flat,
+.row-group > .effect-row-flat {
+    margin-top: 0;
+}
+
+/* ── Inline Create Form ────────────────────────────────────────────────────── */
+
+.inline-create-form {
+    flex-direction: row;
+    align-items: center;
+    padding: 4px 6px;
+    background-color: rgba(20, 35, 55, 0.7);
+    border-width: 1px;
+    border-color: rgba(0, 150, 255, 0.35);
+    border-radius: 3px;
+    margin-top: 2px;
+}
+
+.inline-create-label {
+    font-size: 10px;
+    color: rgba(160, 190, 220, 0.85);
+    margin-right: 6px;
+    flex-shrink: 0;
+}
+
+.inline-create-field {
+    flex-grow: 1;
+    margin: 0 4px 0 0;
+    min-width: 80px;
+}
+
+.inline-create-field > Label {
+    display: none;
+}
+
+.inline-create-field .unity-text-field__input {
+    height: 20px;
+    padding: 2px 5px;
+    font-size: 11px;
+}
+
+.inline-create-confirm {
+    height: 20px;
+    padding: 0 8px;
+    font-size: 10px;
+    background-color: rgba(0, 110, 55, 0.55);
+    border-color: rgba(0, 170, 75, 0.65);
+    color: rgb(130, 215, 130);
+    flex-shrink: 0;
+    margin-right: 3px;
+}
+
+.inline-create-confirm:hover {
+    background-color: rgba(0, 140, 65, 0.7);
+    border-color: rgba(0, 200, 90, 0.8);
+}
+
+.inline-create-cancel {
+    height: 20px;
+    width: 22px;
+    padding: 0;
+    font-size: 12px;
+    background-color: rgba(80, 80, 80, 0.3);
+    border-color: rgba(90, 90, 90, 0.4);
+    color: rgba(180, 180, 180, 0.6);
+    flex-shrink: 0;
+}
+
+.inline-create-cancel:hover {
+    background-color: rgba(160, 30, 30, 0.5);
+    border-color: rgba(200, 60, 60, 0.7);
+    color: rgb(240, 160, 160);
+}
+
+/* Small "+" button next to dropdowns to trigger inline creation */
+.inline-create-btn {
+    width: 18px;
+    height: 18px;
+    padding: 0;
+    font-size: 11px;
+    background-color: rgba(0, 150, 255, 0.08);
+    border-color: rgba(0, 150, 255, 0.28);
+    color: rgba(90, 170, 255, 0.7);
+    flex-shrink: 0;
+    margin-right: 4px;
+    border-radius: 2px;
+}
+
+.inline-create-btn:hover {
+    background-color: rgba(0, 150, 255, 0.22);
+    border-color: rgba(0, 150, 255, 0.6);
+    color: rgb(130, 200, 255);
+}
+
+/* ── Condition Negate Toggle (IS / NOT) ────────────────────────────────────── */
+
+.condition-negate-button {
+    width: 38px;
+    height: 20px;
+    padding: 0;
+    font-size: 9px;
+    -unity-font-style: bold;
+    flex-shrink: 0;
+    margin-right: 4px;
+}
+
+/* IS state — neutral/positive */
+.condition-negate--is {
+    background-color: rgba(60, 100, 60, 0.35);
+    border-color: rgba(80, 160, 80, 0.5);
+    color: rgb(140, 210, 140);
+}
+
+.condition-negate--is:hover {
+    background-color: rgba(80, 130, 80, 0.5);
+    border-color: rgba(100, 190, 100, 0.7);
+}
+
+/* NOT state — negated/red */
+.condition-negate--not {
+    background-color: rgba(160, 30, 30, 0.45);
+    border-color: rgba(210, 60, 60, 0.65);
+    color: rgb(230, 140, 140);
+}
+
+.condition-negate--not:hover {
+    background-color: rgba(190, 45, 45, 0.6);
+    border-color: rgba(230, 80, 80, 0.8);
+}
+
+/* Tint the condition row when negated */
+.condition-row-negated.condition-row-flat {
+    background-color: rgba(180, 40, 40, 0.07);
+    border-left-color: rgba(210, 70, 70, 0.45);
+}
+
+/* ── AND / OR Group Boxes ──────────────────────────────────────────────────── */
+
+.condition-group {
+    border-width: 1px;
+    border-radius: 4px;
+    margin-top: 4px;
+}
+
+.and-group {
+    border-color: rgba(0, 190, 80, 0.35);
+    background-color: rgba(0, 190, 80, 0.03);
+}
+
+.or-group {
+    border-color: rgba(255, 160, 0, 0.35);
+    background-color: rgba(255, 160, 0, 0.03);
+}
+
+.condition-group-header {
+    flex-direction: row;
+    align-items: center;
+    padding: 3px 6px;
+    border-bottom-width: 1px;
+}
+
+.and-group .condition-group-header {
+    background-color: rgba(0, 190, 80, 0.08);
+    border-bottom-color: rgba(0, 190, 80, 0.22);
+}
+
+.or-group .condition-group-header {
+    background-color: rgba(255, 160, 0, 0.08);
+    border-bottom-color: rgba(255, 160, 0, 0.22);
+}
+
+.and-label {
+    font-size: 10px;
+    -unity-font-style: bold;
+    color: rgb(100, 210, 130);
+    letter-spacing: 1px;
+    flex-grow: 1;
+}
+
+.or-label {
+    font-size: 10px;
+    -unity-font-style: bold;
+    color: rgb(255, 185, 80);
+    letter-spacing: 1px;
+    flex-grow: 1;
+}
+
+.condition-group-children {
+    padding: 4px 6px 4px 12px;
+}
+
+/* ── Validation Strip ──────────────────────────────────────────────────────── */
+
+.validation-panel {
+    border-top-width: 1px;
+    border-top-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.12);
+    padding: 2px 6px 4px 6px;
+}
+
+.validation-scroll {
+    margin-top: 2px;
+}
+
+.validation-issue {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 5px 8px;
+    border-radius: 3px;
+    border-left-width: 3px;
+    margin-bottom: 4px;
+}
+
+.validation-error {
+    background-color: rgba(160, 30, 30, 0.15);
+    border-left-color: rgba(210, 60, 60, 0.8);
+}
+
+.validation-warning {
+    background-color: rgba(160, 130, 0, 0.12);
+    border-left-color: rgba(210, 170, 0, 0.8);
+}
+
+.validation-severity {
+    font-size: 9px;
+    -unity-font-style: bold;
+    letter-spacing: 0.5px;
+    flex-shrink: 0;
+    margin-right: 6px;
+    padding-top: 1px;
+    min-width: 42px;
+}
+
+.validation-error .validation-severity {
+    color: rgb(230, 100, 100);
+}
+
+.validation-warning .validation-severity {
+    color: rgb(210, 175, 60);
+}
+
+.validation-message {
+    font-size: 11px;
+    color: rgb(210, 210, 210);
+    white-space: normal;
+    flex-grow: 1;
+}

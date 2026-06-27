@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:VisualElement class="effect-row-flat">
+        <ui:Button name="effect-type-button" text="+ Add" class="effect-type--add" />
+        <ui:DropdownField name="predicate-dropdown" class="predicate-dropdown" />
+        <ui:VisualElement name="arguments-container" class="row-args-container" />
+        <ui:Button name="delete-button" text="×" class="row-delete-button" />
+    </ui:VisualElement>
+</ui:UXML>

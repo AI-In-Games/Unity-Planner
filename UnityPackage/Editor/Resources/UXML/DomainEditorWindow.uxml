@@ -1,0 +1,65 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <!-- Toolbar -->
+    <ui:VisualElement name="toolbar" class="toolbar">
+        <ui:Label name="domain-name-label" text="Domain: (none)" style="flex-grow: 1; -unity-text-align: middle-left; padding-left: 8px;" />
+        <ui:Button name="validate-button" text="Validate" />
+        <ui:Button name="pddl-button" text="PDDL  ▾" />
+    </ui:VisualElement>
+
+    <ui:TwoPaneSplitView fixed-pane-initial-dimension="230" orientation="Horizontal" style="flex-grow: 1;">
+
+        <!-- Navigation Panel -->
+        <ui:VisualElement name="navigation-panel" class="navigation-panel">
+
+            <!-- Actions - PRIMARY section, takes all available space -->
+            <ui:VisualElement name="actions-section" class="action-section">
+
+                <!-- Section header row -->
+                <ui:VisualElement class="section-header-row">
+                    <ui:Label text="ACTIONS" class="actions-section-label" />
+                    <ui:Button name="add-action-button" text="+ Add" class="add-inline-button" />
+                </ui:VisualElement>
+
+                <!-- Filter field -->
+                <ui:TextField name="actions-search" placeholder-text="Filter actions..." class="search-field" />
+
+                <!-- Action list -->
+                <ui:ListView name="actions-list" style="flex-grow: 1;" />
+
+                <!-- Empty state - shown when no actions -->
+                <ui:VisualElement name="empty-actions-hint" class="empty-hint" style="display: none; flex-grow: 1;">
+                    <ui:Label text="No actions defined." class="empty-hint-label" />
+                    <ui:Label text="Click + Add to create your first action." class="empty-hint-sub" />
+                </ui:VisualElement>
+
+            </ui:VisualElement>
+
+            <!-- Divider between primary and secondary sections -->
+            <ui:VisualElement class="secondary-divider" />
+
+            <!-- Predicates - SECONDARY, collapsed by default -->
+            <ui:Foldout name="predicates-foldout" text="Predicates" value="false" class="secondary-foldout">
+                <ui:ListView name="predicates-list" style="max-height: 100px;" />
+                <ui:Button name="add-predicate-button" text="+ Add" class="secondary-add-button" />
+            </ui:Foldout>
+
+            <!-- Object Types - SECONDARY, collapsed by default -->
+            <ui:Foldout name="types-foldout" text="Object Types" value="false" class="secondary-foldout">
+                <ui:TreeView name="types-tree" style="max-height: 100px;" />
+                <ui:Button name="add-type-button" text="+ Add" class="secondary-add-button" />
+            </ui:Foldout>
+
+        </ui:VisualElement>
+
+        <!-- Main Editor Panel -->
+        <ui:VisualElement name="main-editor-panel" class="main-editor-panel">
+            <ui:Label text="Select an action from the left to edit it." class="placeholder-hint" />
+        </ui:VisualElement>
+
+    </ui:TwoPaneSplitView>
+
+    <!-- Problems / validation panel, docked at the bottom and collapsible -->
+    <ui:Foldout name="validation-foldout" text="Problems" value="true" class="validation-panel">
+        <ui:ScrollView name="validation-list" class="validation-scroll" style="max-height: 140px;" />
+    </ui:Foldout>
+</ui:UXML>

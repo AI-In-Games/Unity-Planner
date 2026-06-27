@@ -1,0 +1,40 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:ScrollView style="flex-grow: 1;">
+        <ui:VisualElement class="action-editor-root">
+
+            <!-- Action name + delete in same header row -->
+            <ui:VisualElement class="action-header-row">
+                <ui:TextField name="action-name" placeholder-text="action-name" class="action-name-field" />
+                <ui:Button name="delete-action-button" text="Delete" class="danger-button-small" />
+            </ui:VisualElement>
+
+            <!-- PARAMETERS (:parameters in PDDL) -->
+            <ui:VisualElement name="param-section" class="editor-section param-section">
+                <ui:VisualElement class="section-title-row">
+                    <ui:Label text="PARAMETERS" class="editor-section-label param-label" />
+                    <ui:Button name="add-parameter-button" text="+ Add" class="section-add-button" />
+                </ui:VisualElement>
+                <ui:VisualElement name="parameters-container" />
+            </ui:VisualElement>
+
+            <!-- PRECONDITIONS (:precondition in PDDL) -->
+            <ui:VisualElement name="precondition-section" class="editor-section requirement-section">
+                <ui:VisualElement class="section-title-row">
+                    <ui:Label text="PRECONDITIONS" class="editor-section-label requirement-label" />
+                    <ui:Button name="add-precondition-button" text="+ Add" class="section-add-button" />
+                </ui:VisualElement>
+                <ui:VisualElement name="conditions-container" />
+            </ui:VisualElement>
+
+            <!-- EFFECTS (:effect in PDDL) -->
+            <ui:VisualElement name="effect-section" class="editor-section effect-section">
+                <ui:VisualElement class="section-title-row">
+                    <ui:Label text="EFFECTS" class="editor-section-label effect-label" />
+                    <ui:Button name="add-effect-button" text="+ Add" class="section-add-button" />
+                </ui:VisualElement>
+                <ui:VisualElement name="effects-container" />
+            </ui:VisualElement>
+
+        </ui:VisualElement>
+    </ui:ScrollView>
+</ui:UXML>

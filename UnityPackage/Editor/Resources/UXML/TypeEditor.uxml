@@ -1,0 +1,16 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:VisualElement style="padding: 10px;">
+        <ui:Label text="Type Definition" style="font-size: 14px; -unity-font-style: bold; margin-bottom: 10px;" />
+
+        <ui:TextField name="type-name" label="Type Name" />
+
+        <ui:DropdownField name="parent-type" label="Parent Type" />
+
+        <ui:Label text="Child Types" class="subsection-label" />
+        <ui:Label name="children-list" text="(none)" class="placeholder-text" style="margin-left: 10px;" />
+
+        <ui:VisualElement style="flex-direction: row; margin-top: 20px;">
+            <ui:Button name="delete-type-button" text="Delete Type" style="flex-grow: 1; background-color: rgba(150, 0, 0, 0.3);" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

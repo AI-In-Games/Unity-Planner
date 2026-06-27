@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:VisualElement class="parameter-row">
+        <ui:DropdownField name="param-type" class="param-type-dropdown" />
+        <ui:TextField name="param-name" placeholder-text="name" class="param-name-field" />
+        <ui:Button name="delete-button" text="×" class="row-delete-button" />
+    </ui:VisualElement>
+</ui:UXML>

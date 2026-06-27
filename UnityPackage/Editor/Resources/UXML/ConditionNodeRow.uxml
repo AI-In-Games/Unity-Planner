@@ -1,0 +1,26 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:VisualElement class="condition-row" style="margin-left: 0px;">
+        <!-- Indentation spacer will be added dynamically -->
+        <ui:VisualElement style="flex-direction: row; flex-grow: 1;">
+            <ui:DropdownField name="node-type-dropdown" style="width: 100px; margin-right: 5px;" />
+
+            <!-- For Predicate nodes -->
+            <ui:VisualElement name="predicate-content" style="flex-direction: row; flex-grow: 1; display: none;">
+                <ui:DropdownField name="predicate-dropdown" style="flex-grow: 1; margin-right: 5px;" />
+                <ui:Label text="(" style="margin-right: 2px; -unity-text-align: middle-left;" />
+                <ui:VisualElement name="arguments-container" style="flex-direction: row; flex-grow: 1;" />
+                <ui:Label text=")" style="margin-left: 2px; -unity-text-align: middle-left;" />
+            </ui:VisualElement>
+
+            <!-- For Group nodes (And/Or/Not) -->
+            <ui:VisualElement name="group-content" style="flex-direction: row; display: none;">
+                <ui:Button name="add-child-button" text="+ Add Child" style="margin-right: 5px;" />
+            </ui:VisualElement>
+
+            <ui:Button name="delete-button" text="×" style="width: 24px; margin-left: 5px;" />
+        </ui:VisualElement>
+
+        <!-- Children container for nested conditions -->
+        <ui:VisualElement name="children-container" style="margin-left: 20px;" />
+    </ui:VisualElement>
+</ui:UXML>

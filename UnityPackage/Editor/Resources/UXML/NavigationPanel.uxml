@@ -1,0 +1,25 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:VisualElement>
+        <!-- Types Section -->
+        <ui:VisualElement name="types-section" class="type-section section-spacing">
+            <ui:Label text="Types" class="section-header" />
+            <ui:Label text="(Type hierarchy - TODO)" class="placeholder-text" />
+            <ui:Button name="add-type-button" text="+ Add Type" />
+        </ui:VisualElement>
+
+        <!-- Predicates Section -->
+        <ui:VisualElement name="predicates-section" class="predicate-section section-spacing">
+            <ui:Label text="Predicates" class="section-header" />
+            <ui:ListView name="predicates-list" class="field-spacing" style="height: 100px;" />
+            <ui:Button name="add-predicate-button" text="+ Add Predicate" />
+        </ui:VisualElement>
+
+        <!-- Actions Section -->
+        <ui:VisualElement name="actions-section" class="action-section">
+            <ui:Label text="Actions" class="section-header" />
+            <ui:TextField name="actions-search" placeholder-text="Search actions..." class="search-field" />
+            <ui:ListView name="actions-list" style="flex-grow: 1;" />
+            <ui:Button name="add-action-button" text="+ Add Action" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

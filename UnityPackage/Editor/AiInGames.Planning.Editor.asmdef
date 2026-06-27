@@ -1,0 +1,22 @@
+{
+    "name": "AiInGames.Planning.Editor",
+    "rootNamespace": "AiInGames.Planning.Unity.Editor",
+    "references": [
+        "AiInGames.Planning",
+        "AiInGames.Planning.Core",
+        "AiInGames.Planning.Search",
+        "AIInGames.Planning.PDDL",
+        "AIInGames.Planning.PDDL.Validation"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

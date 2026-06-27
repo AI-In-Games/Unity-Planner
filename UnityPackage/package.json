@@ -1,0 +1,25 @@
+{
+  "name": "com.aiingames.planning",
+  "version": "0.0.1",
+  "displayName": "Planning",
+  "description": "A forward-search PDDL planning package for Unity game AI. Includes ForwardBitVectorAStar and ForwardDictionaryAStar planners, PDDL domain import, action grounding, and plan execution.",
+  "unity": "6000.1",
+  "keywords": [
+    "ai",
+    "planning",
+    "pddl"
+  ],
+  "author": {
+    "name": "AI In Games",
+    "url": "https://github.com/AI-In-Games"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AI-In-Games/Planning.git"
+  },
+  "dependencies": {
+    "com.aiingames.blackboard": "0.0.1",
+    "com.aiingames.pddl-parser": "0.1.0"
+  },
+  "license": "Apache-2.0"
+}

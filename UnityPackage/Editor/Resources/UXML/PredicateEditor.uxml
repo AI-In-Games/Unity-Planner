@@ -1,0 +1,15 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:VisualElement style="padding: 10px;">
+        <ui:Label text="Predicate Definition" style="font-size: 14px; -unity-font-style: bold; margin-bottom: 10px;" />
+
+        <ui:TextField name="predicate-name" label="Predicate Name" />
+
+        <ui:Label text="Parameters" class="subsection-label" />
+        <ui:VisualElement name="parameters-container" />
+        <ui:Button name="add-parameter-button" text="+ Add Parameter" />
+
+        <ui:VisualElement style="flex-direction: row; margin-top: 20px;">
+            <ui:Button name="delete-predicate-button" text="Delete Predicate" style="flex-grow: 1; background-color: rgba(150, 0, 0, 0.3);" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

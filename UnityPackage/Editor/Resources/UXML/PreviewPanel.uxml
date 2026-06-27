@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:VisualElement>
+        <ui:Label text="PDDL Preview" class="subsection-label" />
+        <ui:TextField name="pddl-preview" multiline="true" readonly="true" class="pddl-preview" style="flex-grow: 1;" />
+        <ui:Button name="export-button" text="Export to File" style="margin-top: 10px;" />
+    </ui:VisualElement>
+</ui:UXML>
