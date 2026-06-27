@@ -2,6 +2,8 @@
 
 A goal-oriented action planner for Unity games. You describe your AI's world as a set of boolean conditions, define actions with preconditions and effects, set a goal state, and the planner finds the action sequence to reach it.
 
+> ⚠️ **Proof of concept — not production ready.** This is a research prototype. APIs may change, and it has not been hardened or tested for production use. Use it to explore and learn from, not to ship.
+
 ## When to use it
 
 Use this package when your AI needs to reason about goals and consequences at runtime. It fits well for combat AI that adapts to resources and health, RTS agents that coordinate gathering and construction, stealth AI that responds to alert states, and companion AI with multi-step task chains.
@@ -74,6 +76,7 @@ if (result.Success)
 
 ## Documentation
 
+- [Quick Start](Documentation~/quick-start.md) — a working plan in five minutes, then the playable Soldier demos
 - [Getting Started](Documentation~/getting-started.md) — core concepts and your first plan
 - [Architecture](Documentation~/architecture.md) — how the components fit together
 - [Domain Editor](Documentation~/domain-editor.md) — authoring PDDL domains visually
@@ -81,3 +84,7 @@ if (result.Success)
 - [Plan Executor Guide](../Docs/PlanExecutorGuide.md) — executing plans with event callbacks
 - [Action Grounding Guide](../Docs/ActionGroundingGuide.md) — parameterized action templates
 - [Predicate Integration](../Docs/PredicateIntegration.md) — converting game state to predicates
+
+## Contributions
+
+Contributions are welcome! Bug reports, feature ideas, documentation improvements, and pull requests are all appreciated. Open an issue to discuss larger changes before starting.
